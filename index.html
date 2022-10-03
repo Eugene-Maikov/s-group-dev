@@ -16,7 +16,6 @@
   <link rel="stylesheet" href="css/home.css">
 </head>
 
-
 <body class="page__body">
   <div class="site-container">
     <header class="header">
@@ -26,14 +25,38 @@
             <img loading="lazy" src="img/logo.svg" class="image" width="230" height="80" alt="Логотип s-group">
           </a>
           <div class="header__center">
-            <div class="header__location">Нижний новгород</div>
+            <a href="#" class="header__location">Нижний новгород
+              <svg class="arrow-nav" width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.05345 1.38021L4.52665 6L-2.01938e-07 1.38021L1.41332 -6.17781e-08L4.52665 3.17734L7.64014 -3.33961e-07L9.05345 1.38021Z"/>
+              </svg>
+            </a>
             <nav class="nav" title="Навигация" data-menu>
               <ul class="list-reset nav__list">
-                <li class="nav__item"><a href="#" class="nav__link">Каталог</a></li>
-                <li class="nav__item"><a href="#" class="nav__link nav__link--arrow">О компании</a></li>
-                <li class="nav__item"><a href="#" class="nav__link nav__link--arrow">Новости</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">Доставка и оплата</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">Контакты</a></li>
+                <li><a href="#">Каталог</a></li>
+                <li><a href="#" class="submenu-link">О компании
+                  <svg class="arrow-nav" width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.05345 1.38021L4.52665 6L-2.01938e-07 1.38021L1.41332 -6.17781e-08L4.52665 3.17734L7.64014 -3.33961e-07L9.05345 1.38021Z"/>
+                  </svg>
+                  </a>
+                  <ul class="submenu">
+                    <li><a href="#">Подменю</a></li>
+                    <li><a href="#">Подменю</a></li>
+                    <li><a href="#">Подменю</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="submenu-link">Новости
+                  <svg class="arrow-nav" width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.05345 1.38021L4.52665 6L-2.01938e-07 1.38021L1.41332 -6.17781e-08L4.52665 3.17734L7.64014 -3.33961e-07L9.05345 1.38021Z"/>
+                  </svg>
+                  </a>
+                  <ul class="list-reset submenu">
+                    <li><a href="#">Подменю</a></li>
+                    <li><a href="#">Подменю</a></li>
+                    <li><a href="#">Подменю</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Доставка и оплата</a></li>
+                <li><a href="#">Контакты</a></li>
               </ul>
             </nav>
           </div>
@@ -42,11 +65,11 @@
               <img loading="lazy" src="img/search.svg" class="image" width="30" height="30" alt="Иконка поиска">
             </a>
             <a class="header__icon" href="#">
-              <img loading="lazy" src="img/whatsapp .svg" class="image" width="30" height="30" alt="Иконка корзины">
+              <img loading="lazy" src="img/whatsapp.svg" class="image" width="30" height="30" alt="Иконка whatsapp">
             </a>
             <a class="header__icon header__icon--basket" href="#">
               <img loading="lazy" src="img/basket.svg" class="image" width="30" height="30" alt="Иконка корзины">
-              <span class="basket">12</span>
+              <div class="basket">12</div>
             </a>
 
             <button class="header__icon burger" aria-label="Открыть меню" aria-expanded="false" data-burger>
@@ -1065,14 +1088,14 @@
             <div class="sitemap">
               <div class="sitemap__item">
                 <h3 class="sitemap__title"><a class="title title--min title--light" href="#">Каталог</a></h3>
-                <ul class="list-reset">
+                <ul class="list-reset sitemap__list">
                   <li><a class="sitemap__link" href="#">Карта категорий</a></li>
                   <li><a class="sitemap__link" href="#">Каталог продукции</a></li>
                 </ul>
               </div>
               <div class="sitemap__item">
                 <h3 class="sitemap__title"><a class="title title--min title--light" href="#">О компании</a></h3>
-                <ul class="list-reset">
+                <ul class="list-reset sitemap__list">
                   <li><a class="sitemap__link" href="#">История компании</a></li>
                   <li><a class="sitemap__link" href="#">S group сегодня</a></li>
                   <li><a class="sitemap__link" href="#">Марафон Добра</a></li>
@@ -1081,7 +1104,7 @@
                 </ul>
               </div>
               <div class="sitemap__item sitemap__item--orderLast">
-                <ul class="list-reset">
+                <ul class="list-reset sitemap__list">
                   <li class="sitemap__title"><a class="title title--min title--light" href="#">Контакты</a></li>
                   <li class="sitemap__title"><a class="title title--min title--light" href="#">Доставка и оплата</a>
                   </li>
@@ -1090,7 +1113,7 @@
               </div>
               <div class="sitemap__item">
                 <h3 class="sitemap__title"><a class="title title--min title--light" href="#">Новости</a></h3>
-                <ul class="list-reset">
+                <ul class="list-reset sitemap__list">
                   <li><a class="sitemap__link" href="#">Новости о продуктах</a></li>
                   <li><a class="sitemap__link" href="#">Новости компании</a></li>
                 </ul>
@@ -1101,7 +1124,7 @@
                 <div class="sitemap-mobile__left">
                   <div class="sitemap__item">
                     <h3 class="sitemap__title"><a class="title title--min title--light" href="#">Каталог</a></h3>
-                    <ul class="list-reset">
+                    <ul class="list-reset sitemap__list">
                       <li><a class="sitemap__link" href="#">Карта категорий</a></li>
                       <li><a class="sitemap__link" href="#">Каталог продукции</a></li>
                     </ul>
@@ -1117,7 +1140,7 @@
                 <div class="sitemap-mobile__right">
                   <div class="sitemap__item">
                     <h3 class="sitemap__title"><a class="title title--min title--light" href="#">О компании</a></h3>
-                    <ul class="list-reset">
+                    <ul class="list-reset sitemap__list">
                       <li><a class="sitemap__link" href="#">История компании</a></li>
                       <li><a class="sitemap__link" href="#">S group сегодня</a></li>
                       <li><a class="sitemap__link" href="#">Марафон Добра</a></li>
@@ -1129,7 +1152,7 @@
               </div>
               <div class="sitemap-mobile__bottom">
                 <div class="sitemap__item sitemap__item--orderLast">
-                  <ul class="list-reset">
+                  <ul class="list-reset sitemap__list">
                     <li class="sitemap__title"><a class="title title--min title--light" href="#">Контакты</a></li>
                     <li class="sitemap__title"><a class="title title--min title--light" href="#">Доставка и оплата</a>
                     </li>

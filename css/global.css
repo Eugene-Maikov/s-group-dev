@@ -175,6 +175,7 @@ a {
   padding: 17px 40px;
   border-radius: 3px;
 }
+
 @media (max-width: 768px) {
   .btn {
     padding: 12px 35px;
