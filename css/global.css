@@ -183,8 +183,8 @@ a {
 }
 
 .burger {
-  --burger-width: 30px;
-  --burger-height: 30px;
+  --burger-width: 50px;
+  --burger-height: 26px;
   --burger-line-height: 2px;
   position: relative;
   border: none;
