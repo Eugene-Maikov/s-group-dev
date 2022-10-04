@@ -30,7 +30,12 @@
     height: 40px;
   }
 }
-.header__location {
+.header__location{
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+.header__location-link{
+  position: relative;
   margin-bottom: 16px;
   font-weight: 400;
   font-size: 14px;
@@ -38,8 +43,112 @@
   letter-spacing: 0.02em;
   color: var(--light-color);
   display: inline-block;
-  position: relative;
+  cursor: pointer;
 }
+.submenu__location{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--light-color);
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 5;
+  width: 300px;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: 0 0;
+  transition: 0.5s ease-in-out;
+  filter: drop-shadow(0px 5px 25px rgba(0, 0, 0, 0.1));
+}
+.submenu__location-active{
+  opacity: 1;
+  transform: scaleY(1);
+}
+.submenu__location > li > a {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: var(--brown-color);
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+.submenu__location > li > a:hover {
+  color: var(--light-color);
+  background-color: var(--secondary-color);
+}
+.submenu__location a {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: var(--brown-color);
+  width: 100%;
+  display: block;
+  padding: 8px;
+}
+
+.location__option-selected{
+  color: var(--light-color);
+  background-color: var(--secondary-color);
+}
+
+
+.form_radio_btn {
+	display: inline-block;
+	margin-right: 10px;
+  width: 100%;
+}
+.form_radio_btn input[type=radio] {
+	display: none;
+}
+.form_radio_btn label {
+	display: inline-block;
+	cursor: pointer;
+	padding: 0px 15px;
+	line-height: 34px;
+	border: none;
+	user-select: none;
+  width: 100%;
+}
+ 
+/* Checked */
+.form_radio_btn input[type=radio]:checked + label {
+	color: var(--light-color);
+  background-color: var(--secondary-color);
+}
+ 
+/* Hover */
+.form_radio_btn label:hover {
+	 color: var(--light-color);
+  background-color: var(--secondary-color);
+}
+ 
+/* Disabled */
+.form_radio_btn input[type=radio]:disabled + label {
+	background: #efefef;
+	color: #666;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 768px) {
   .header__location {
     display: none;
@@ -125,7 +234,6 @@
     display: none;
   }
 }
-
 
 .nav__list > li {
   position: relative;

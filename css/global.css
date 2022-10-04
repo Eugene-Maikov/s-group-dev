@@ -250,6 +250,7 @@ a {
   right: 0;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 .menu--active .nav__list {
   display: flex;
