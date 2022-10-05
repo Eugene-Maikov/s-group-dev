@@ -188,6 +188,7 @@ a {
   --burger-height: 26px;
   --burger-line-height: 2px;
   position: relative;
+  z-index: 20;
   border: none;
   padding: 0;
   width: var(--burger-width);
@@ -223,6 +224,15 @@ a {
   transform: translateY(-50%);
   transition: transform 0.3s ease-in-out;
 }
+@media (max-width: 990px) {
+  .burger.burger--active{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+  } 
+}
+
 .burger--active::before {
   top: 50%;
   transform: rotate(45deg);
@@ -252,6 +262,7 @@ a {
   justify-content: center;
   flex-direction: column;
 }
+
 .menu--active .nav__list {
   display: flex;
   flex-direction: column;

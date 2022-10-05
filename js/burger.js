@@ -71,3 +71,11 @@ const enableScroll = () => {
     });
   });
 })();
+
+const submenuLink = document.querySelector('.submenu-link');
+const submenu = document.querySelector('.submenu');
+
+submenuLink.addEventListener("click", (e) => {
+  submenu.classList.toggle('submenu--active');
+  submenu.classList.contains('submenu--active');
+});

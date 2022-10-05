@@ -30,11 +30,11 @@
     height: 40px;
   }
 }
-.header__location{
+.header__location {
   position: relative;
   transition: all 0.3s ease-in-out;
 }
-.header__location-link{
+.header__location-link {
   position: relative;
   margin-bottom: 16px;
   font-weight: 400;
@@ -45,7 +45,7 @@
   display: inline-block;
   cursor: pointer;
 }
-.submenu__location{
+.submenu__location {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -53,17 +53,27 @@
   position: absolute;
   left: 0;
   top: 100%;
-  z-index: 5;
+  z-index: 6;
   width: 300px;
   opacity: 0;
   transform: scaleY(0);
   transform-origin: 0 0;
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
   filter: drop-shadow(0px 5px 25px rgba(0, 0, 0, 0.1));
 }
-.submenu__location-active{
+.submenu__location-active {
   opacity: 1;
   transform: scaleY(1);
+  
+}
+@media (max-width: 990px) {
+  .submenu__location-active {
+    transform: translateY(-40px);
+    z-index: 23;
+    width: calc(100% - 120px);
+    left: 60px;
+    right: 60px;
+  }
 }
 .submenu__location > li > a {
   font-weight: 700;
@@ -89,69 +99,63 @@
   padding: 8px;
 }
 
-.location__option-selected{
+.location__option-selected {
   color: var(--light-color);
   background-color: var(--secondary-color);
 }
 
-
 .form_radio_btn {
-	display: inline-block;
-	margin-right: 10px;
+  display: inline-block;
+  margin-right: 10px;
   width: 100%;
 }
-.form_radio_btn input[type=radio] {
-	display: none;
+.form_radio_btn input[type="radio"] {
+  display: none;
 }
 .form_radio_btn label {
-	display: inline-block;
-	cursor: pointer;
-	padding: 0px 15px;
-	line-height: 34px;
-	border: none;
-	user-select: none;
+  display: inline-block;
+  cursor: pointer;
+  padding: 0px 15px;
+  line-height: 34px;
+  border: none;
+  user-select: none;
   width: 100%;
 }
- 
+
 /* Checked */
-.form_radio_btn input[type=radio]:checked + label {
-	color: var(--light-color);
+.form_radio_btn input[type="radio"]:checked + label {
+  color: var(--light-color);
   background-color: var(--secondary-color);
 }
- 
+
 /* Hover */
 .form_radio_btn label:hover {
-	 color: var(--light-color);
+  color: var(--light-color);
   background-color: var(--secondary-color);
 }
- 
+
 /* Disabled */
-.form_radio_btn input[type=radio]:disabled + label {
-	background: #efefef;
-	color: #666;
+.form_radio_btn input[type="radio"]:disabled + label {
+  background: #efefef;
+  color: #666;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 768px) {
+@media (max-width: 990px) {
   .header__location {
-    display: none;
+    position: static;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    opacity: 1;
+    transform: scaleY(1);
+    display: block;
+    border-bottom: 1px solid rgb(43, 43, 43);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header__location-link{
+    margin-bottom: 0;
   }
 }
 .header__icons {
@@ -229,9 +233,38 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
-@media (max-width: 768px) {
+.nav.menu--active {
+    z-index: 10;
+  }
+@media (max-width: 990px) {
   .nav {
     display: none;
+  }
+  .nav.menu--active {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .nav-mask{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    z-index: 0;
+    opacity: 0;
+    transform: scaleY(0);
+    transition: all .3s ease-in-out;
+  }
+  .nav__list {
+    z-index: -1;
+    margin-top: 23px;
+  }
+  .nav__list > li:not(:last-child) {
+    margin-bottom: 20px;
   }
 }
 
@@ -282,7 +315,7 @@
   opacity: 0;
   transform: scaleY(0);
   transform-origin: 0 0;
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
   filter: drop-shadow(0px 5px 25px rgba(0, 0, 0, 0.1));
 }
 .submenu a {
@@ -309,6 +342,37 @@
 .nav__list li:hover .submenu-link {
   color: var(--secondary-color);
 }
+@media (max-width: 990px) {
+  .nav__list > li > a{
+    padding: 0 20px;
+  }
+  .nav__list,
+  .nav__list li{
+    width: 100%;
+  }
+  .submenu{
+    opacity: 1;
+    transform: scaleY(1);
+    position: static;
+    display: block;
+    background-color: #212e41;
+    width: 100%;
+    display: none;
+  }
+  .submenu--active{
+    display: block;
+  }
+  .submenu a{
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .submenu-link{
+    padding: 0 20px;
+  }
+}
+
 
 .intro {
   width: 100%;
