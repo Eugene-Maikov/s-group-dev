@@ -262,6 +262,7 @@ body.mouse .form_radio_btn label:hover {
     transition: all 0.2s ease-in-out;
   }
   .nav-maskClose {
+    display: inline-block;
     content: "";
     position: absolute;
     top: -30px;
@@ -870,7 +871,6 @@ body.mouse .nav__list li:hover .submenu-link {
     display: flex;
     justify-content: center;
     margin-top: 30px;
-    margin-bottom: 8px 3px;
   }
 }
 .benefits__info {
