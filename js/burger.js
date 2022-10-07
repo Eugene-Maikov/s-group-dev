@@ -45,6 +45,8 @@ const submenuLink = document.querySelector('.submenu-link');
 const submenu = document.querySelector('.submenu');
 console.log(submenuLinks);
 
+
+// Menu mobile
 for (const item of submenuLinks) {
   item.children[0].addEventListener("click", () => {
     item.children[1].classList.toggle('submenu--active');
