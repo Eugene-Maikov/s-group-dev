@@ -11,12 +11,15 @@ const contactList = document.querySelector('.contacts__list');
 const contactMenu = document.querySelector('.contacts__menu ');
 const btnContactTop = document.querySelectorAll('.contacts__top');
 const contactListItem = document.querySelectorAll('.contacts__list-item');
+let widthWind = document.querySelector('body').offsetWidth;
 const body = document.body;
 
 for (const item of btnContactTop) {
   item.addEventListener("click", () => {
     contactMenu.classList.add('contacts__menu-active');
-    body.classList.add("no-scroll");
+    if (widthWind <= 768) {
+      body.classList.add("no-scroll");
+    }
   });
 }
 for (const item of contactListItem) {
@@ -28,6 +31,9 @@ for (const item of contactListItem) {
     }
 
     contactMenu.classList.remove('contacts__menu-active');
-    body.classList.remove("no-scroll");
+    if (widthWind <= 768) {
+      body.classList.remove("no-scroll");
+    }
+    
   });
 }

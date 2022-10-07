@@ -32,7 +32,7 @@
 }
 .header__location {
   position: relative;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .header__location-link {
   position: relative;
@@ -52,13 +52,13 @@
   background: var(--light-color);
   position: absolute;
   left: 0;
-  top: 100%;
+  top: 0;
   z-index: 6;
   width: 300px;
   opacity: 0;
   transform: scaleY(0);
   transform-origin: 0 0;
-  transition: 0.3s ease-in-out;
+  transition: 0.2s ease-in-out;
   filter: drop-shadow(0px 5px 25px rgba(0, 0, 0, 0.1));
 }
 .submenu__location-active {
@@ -66,12 +66,15 @@
   transform: scaleY(1);
 }
 @media (max-width: 990px) {
-  .submenu__location-active {
-    transform: translateY(-40px);
-    z-index: 23;
+  .submenu__location {
     width: calc(100% - 120px);
     left: 60px;
     right: 60px;
+    top: 20px;
+  }
+  .submenu__location-active {
+    opacity: 1;
+    transform: scaleY(1);
   }
 }
 .submenu__location > li > a {
@@ -81,7 +84,7 @@
   letter-spacing: 0.02em;
   color: var(--brown-color);
   position: relative;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 body.mouse .submenu__location > li > a:hover {
   color: var(--light-color);
@@ -253,10 +256,23 @@ body.mouse .form_radio_btn label:hover {
     width: 100%;
     height: 100%;
     backdrop-filter: blur(5px);
-    z-index: 0;
+    z-index: 1;
     opacity: 0;
     transform: scaleY(0);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  .nav-maskClose {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: -9px;
+    width: 50px;
+    height: 70px;
+    backdrop-filter: blur(5px);
+    z-index: 1;
+    opacity: 0;
+    transform: scaleY(0);
+    transition: all 0.2s ease-in-out;
   }
   .nav__list {
     z-index: -1;
@@ -269,7 +285,7 @@ body.mouse .form_radio_btn label:hover {
 
 .nav__list > li {
   position: relative;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .nav__list > li:not(:last-child) {
   margin-right: 40px;
@@ -281,7 +297,7 @@ body.mouse .form_radio_btn label:hover {
   letter-spacing: 0.02em;
   color: var(--light-color);
   position: relative;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 body.mouse .nav__list li a:hover {
@@ -298,7 +314,7 @@ body.mouse .nav__list .submenu li a:hover {
   top: 6px;
   width: 17px;
   height: 9.5px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .submenu {
@@ -314,7 +330,7 @@ body.mouse .nav__list .submenu li a:hover {
   opacity: 0;
   transform: scaleY(0);
   transform-origin: 0 0;
-  transition: 0.3s ease-in-out;
+  transition: 0.2s ease-in-out;
   filter: drop-shadow(0px 5px 25px rgba(0, 0, 0, 0.1));
 }
 .submenu a {
@@ -1960,7 +1976,7 @@ body.mouse .custom-checkbox:not(:disabled):not(:checked) + label:hover::before {
 
   .contacts__menu {
     position: fixed;
-    background: rgba(0, 0, 0, .5);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 16;
     margin: 0;
     top: 0;
@@ -1973,7 +1989,7 @@ body.mouse .custom-checkbox:not(:disabled):not(:checked) + label:hover::before {
     opacity: 0;
     transform: scale(0);
   }
-  .contacts__menu-active{
+  .contacts__menu-active {
     opacity: 1;
     transform: scale(1);
   }
